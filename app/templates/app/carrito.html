@@ -1,0 +1,32 @@
+{% extends 'app/base2.html' %}
+{% load static %}
+    
+    {% block contenido %}
+
+
+
+
+      <div class="col-25 mt-4">
+        <h3 style="text-align: center;">Carrito de Compras</h3>
+        <h4>Total a Pagar
+          <span class="price" style="color:black">
+            <i class="fa fa-shopping-cart"></i>
+            <b>3</b>
+          </span>
+        </h4>
+        {% for aux in ListaCarrito %}
+        
+        <div>
+          <p><a class="a" style="font-size: large;" >{{ aux.nombre_producto }}</a> <span class="price"  style="font-size: large;">${{ aux.precio_producto }}</span></p>
+        </div>
+        
+        {% endfor %}
+        <hr>
+        <p>Descuento <span class="price" style="color:black ; font-size: large;"><b>$0</b></span></p>
+        <p>Monto Total <span class="price" style="color:black"><b>$21.970</b></span></p>
+        <a class="a btn2" href="{% url 'pago' %}"> Continuar Compra</a>
+      </div>
+
+    
+    
+  {% endblock %}

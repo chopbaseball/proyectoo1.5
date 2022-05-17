@@ -1,0 +1,48 @@
+{% extends 'app/base1.html' %}
+{% load static %}
+  {% block contenido %}
+
+    <div class="container mt-5 mb-5" id="login">
+      <h2 class="letras-h2" style="text-align:center ">Login</h2>
+            <div class="vl">
+              <span class="vl-innertext">or</span>
+            </div>
+            <div class="row">
+            <div class="col">
+              <a href="{% url 'index2' %}" class="fb btn">
+                <i class="fa fa-facebook fa-fw"></i> Iniciar sesion con Facebook
+              </a>
+              <a href="{% url 'index2' %}" class="twitter btn">
+                <i class="fa fa-twitter fa-fw"></i> Iniciar sesion con Twitter
+              </a>
+              <a href="{% url 'index2' %}" class="google btn">
+                <i class="fa fa-google fa-fw"></i> Iniciar sesion con Google+
+              </a>
+              <div class="containers mt-2 mb-1">
+                <div class="row">
+                  <div class="col-12">
+                    <p class="text-center mt-3 text-secondary">Si no tienes cuenta, registrate <a href="{% url 'registrarse' %}">aqui</a></p>  
+                  </div>   
+                </div>
+              </div>
+            </div>
+            
+            <div class="col" id="aaa">
+              <div class="hide-md-lg">
+                <h2 class="letras-h2">or</h2>
+              </div>
+              <div class="mt-2">
+                <input type="text" name="username" placeholder="Usuario" required>
+              </div>
+              <div class="mt-2">
+                <input type="password" name="password" placeholder="Contraseña" required>
+              </div>
+              <div class="mt-2">
+                <a class="btn btn-primary float-end" href="{% url 'index2' %}">Iniciar sesion</a>
+              </div>  
+            </div>
+          
+            </div>
+    </div>
+
+  {% endblock %}

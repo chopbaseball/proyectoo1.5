@@ -1,0 +1,45 @@
+{% extends 'app/base1.html' %}
+{% load static %}    
+
+    {% block contenido %}
+    
+    <h3 style="text-align: center;">PRODUCTOS FELINOS</h3>
+    <table >
+      
+      {% for aux in ListaProductos %}
+      {% if aux.tipo.tipo_productos == 'Gato' %}
+      <tr>
+        <td  >
+          <div class="containerr">
+            {% if aux.imagen %}
+              <img src="{{ aux.imagen.url }}" class="image">
+            {% else %}
+              <img src="{% static 'app/img/comida2.jpg' %}" alt="Avatar" class="image">
+            {% endif %}
+            
+            <div class="overlay">
+              <a class="text" href="{% url 'carrito' %}">IR AL CARRITO <br> STOCK: {{ aux.stock }} UNDS</a>
+
+              
+            </div>
+          </div>
+        </td>
+        <td ><H1> {{ aux.nombre }}  <br><H4> {{ aux.descripcion }}  <br>{{ aux.precio }} </H4>
+          <form action="" method="POST">
+            {% csrf_token %}
+            <input type="hidden" name="nombre_producto" id="nombre_producto" value="{{ aux.nombre }}">
+            <input type="hidden" name="precio_producto" id="precio_producto" value="{{ aux.precio }}">
+            <input type="hidden" name="imagen_producto" id="imagen_producto" value="{{ aux.imagen }}">
+              <input type="submit" value="Carrito" style="cursor: pointer;" class="btn btn-success btn-sm ml-auto">
+          </form>
+        </td>
+      </tr>
+      {% endif %}
+      
+      {% endfor %}
+      
+      
+    </table>
+  
+
+{% endblock %}

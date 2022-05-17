@@ -1,0 +1,73 @@
+{% extends 'app/base2.html' %}
+{% load static %}
+    
+    {% block contenido %}
+
+
+    <div class="col-25 mt-4">
+      <h4>Historial De Compra
+        <span class="price" style="color:black">
+          <i class="fa fa-shopping-cart"></i>
+          <b>Estado </b>
+        </span>
+      </h4>
+      <p><a class="a" href="#" data-toggle="modal" data-target="#foto1">Jueguete Canino</a> <span class="price">Entregado</span></p>
+      <p><a class="a" href="#" data-toggle="modal" data-target="#foto2">Cama XXL</a> <span class="price">Entregado</span></p>
+      <p><a class="a" href="#" data-toggle="modal" data-target="#foto3">Cama para Gatos</a> <span class="price">Entregado</span></p>
+      <br>
+      <br>
+      
+    </div>
+
+    <div class="modal" id="foto1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-body">
+              <img src="{% static 'app/img/jugetes1.jpg' }" alt="300px" width="465px">
+              <div class="row">
+                <div class="col-sm-6"><h5>ID Producto #23423</h5></div>
+                <div class="col-sm-6"><h5 style="text-align: end;">Precio $15990</h5></div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger justity-contend-center" data-dismiss="modal">Volver</button>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="modal" id="foto2">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <img src="{% static 'app/img/cama6.jpeg' }" alt="300px" width="465px">
+            <div class="row">
+              <div class="col-sm-6"><h5>ID Producto #7676</h5></div>
+              <div class="col-sm-6"><h5 style="text-align: end;">Precio $9990</h5></div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger justity-contend-center" data-dismiss="modal">Volver</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="foto3">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <img src="{% static 'app/img/cama7.jpeg' }" alt="300px" width="465px">
+            
+            <div class="row">
+              <div class="col-sm-6"><h5>ID Producto #8888</h5></div>
+              <div class="col-sm-6"><h5 style="text-align: end;">Precio $3990</h5></div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger justity-contend-center" data-dismiss="modal">Volver</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    {% endblock %}
